@@ -59,16 +59,16 @@ public class BmiIndex {
 
         private static void ertekeles(int tomeg, int mag, double bmiIndex) {
             String testalkat;
-            String[] testalkatok = {"sovány","normál","túlsúlyos","kórosan túlsúlyos"};
-            double[] hatarok = {18.4, 24.9, 29.9};
-            int  i = 0;         //0     1      2
+            String[] testalkatok = {"kórosan sovány","normál","túlsúlyos","elhízott", "kórosan elhízott"};
+            double[] hatarok = {20, 24.9, 29.9, 35};
+            int  i = 0;         
             int hossz = hatarok.length;
             while (i < hossz && !(bmiIndex<=hatarok[i])) {
                 i++;
             }
             testalkat = testalkatok[i]; 
             System.out.printf("Ön %d cm magas és %d kg tömegü, "
-                    + "az ön BMI indexe %.1f, "
+                    + "az ön BMI indexe %.1f , "
                     + "Tehát ön %s testalkatú\n", mag, tomeg, bmiIndex, testalkat);
 
         }
